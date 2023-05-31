@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #f2f2f2;
+}
+img {
+  max-width: 100%;
+}
+h1 {
+  text-align: center;
+  padding-block: 18px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.mask_container {
+  margin-top: 2rem;
+  width: 80vw;
+  margin-inline: auto;
+  position: relative;
+}
+
+.black_and_white_image {
+}
+
+.mask_image {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/img/color\ image.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* mask code */
+  -webkit-mask-image: url("assets/img/mask\ Image.png");
+  -webkit-mask-size: cover;
+  -webkit-mask-position: 100% 0;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url("assets/img/mask\ Image.png");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: 100% 0%;
+}
+
+.mask_image:hover {
+  animation: addColor 1500ms steps(32) forwards;
+}
+
+@keyframes addColor {
+  0% {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 100% 0%;
+  }
+  100% {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+}
